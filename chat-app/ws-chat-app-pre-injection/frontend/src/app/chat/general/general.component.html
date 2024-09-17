@@ -1,0 +1,20 @@
+<p-card  styleClass="border-solid border-1 p-4 border-green-500 bg-green-50">
+  <ng-template pTemplate="header">
+    <h1>General</h1>
+  </ng-template>
+  <ng-template pTemplate="body">
+@if(!username){
+  <div>
+    <input type="text" placeholder="Enter your username" #usernameinput>
+    <button (click)="setUsername(usernameinput.value)">Set username</button>
+  </div>
+}@else{
+  <div  class="overflow-hidden h-10rem bg-white">
+    @for(message of messages; track message){
+      <div><span class="text-bluegray-300">{{message.username}} > </span> {{message.text}}</div>
+    }
+  </div>
+  <input type="text" [(ngModel)]="message" (keyup.enter)="sendMessage()">
+}
+  </ng-template>
+</p-card>
