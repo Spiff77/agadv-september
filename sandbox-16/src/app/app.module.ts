@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {NameService} from './name.service';
-import {AModule} from './a/a.module';
 import {BModule} from './b/b.module';
 
 const routes: Routes = [
-
+  {path:'a', loadChildren: () => import('./a/a.module').then(m => m.AModule)},
+  {path:'b', loadChildren: () => import('./b/b.module').then(m => m.BModule)}
 ];
 
 @NgModule({
@@ -19,8 +19,6 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AModule,
-    BModule,
     RouterModule.forRoot(routes)
   ],
   providers: [NameService],

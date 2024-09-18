@@ -8,9 +8,9 @@ import {SharedModule} from '../shared.module';
 import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
-  {path: 'b/b1', component: B1Component},
-  {path: 'b/b2', component: B2Component},
-  {path: 'b/b3', component: B3Component}
+  {path: 'b1', component: B1Component},
+  {path: 'b2', component: B2Component},
+  {path: 'b3', component: B3Component}
 ];
 
 @NgModule({
