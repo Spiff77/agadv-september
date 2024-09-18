@@ -1,0 +1,4 @@
+<div *ngIf="supplier">
+  <h4><a [routerLink]="['/suppliers', supplier.id]"> {{supplier.companyName}}</a></h4>
+  <p>{{supplier.bankAccountNumber | anonymize}}</p>
+</div>

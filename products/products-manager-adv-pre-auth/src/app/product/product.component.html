@@ -1,0 +1,4 @@
+<div *ngIf="product">
+  <h4><a [routerLink]="['/products', product.id]"> {{product.category}}: {{product.name}}</a></h4>
+  <p>{{product.description}}</p>
+</div>
