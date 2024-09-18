@@ -1,0 +1,41 @@
+<ul *ngIf="formSubmitted">
+  <li *ngIf="this.form.controls['name'].invalid">Name is mandatory </li>
+  <li *ngIf="this.form.controls['category'].invalid">Category is mandatory</li>
+  <li *ngIf="this.form.controls['price'].invalid">Price is manfatory</li>
+</ul>
+
+<form [formGroup]="form" (ngSubmit)="add()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="category">Category</label>
+    <input type="text" id="category" formControlName="category">
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input type="text" id="description" formControlName="description">
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input type="text" id="price" formControlName="price">
+  </div>
+  <div>
+    <label for="promo">Promo</label>
+    <input type="text" id="promo" formControlName="promo">
+  </div>
+  <div>
+    <label for="active">Active</label>
+    <input type="checkbox" id="active" formControlName="active">
+  </div>
+
+  <div formGroupName="supplier">
+    <label for="supplierid">Supplier</label>
+    <select formControlName="id" id="supplierid">
+      <option [value]="s.id" *ngFor="let s of suppliers | async">{{s.companyName}}</option>
+    </select>
+  </div>
+
+  <button type="submit">add</button>
+</form>

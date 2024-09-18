@@ -1,7 +1,0 @@
-<h3>Product list</h3>
-<div *ngIf="selectedProduct" appSelectedBox theme="azur">
-  <a href="#" (click)="close()">x</a> You have selected {{selectedProduct?.name}} ({{selectedProduct?.category}})
-</div>
-<input (input)="setFilter($event)" >
-<app-product [product]="product" (evt)="receiveChildrenEvt($event)" *ngFor="let product of filterList()"></app-product>
-<a [routerLink]="['/products/add']">ADD</a>

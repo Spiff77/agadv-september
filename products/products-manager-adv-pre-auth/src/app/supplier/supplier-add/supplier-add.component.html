@@ -1,0 +1,22 @@
+
+<ul *ngIf="formSubmitted">
+  <li *ngIf="this.form.controls['companyName'].invalid">Company name is mandatory </li>
+  <li *ngIf="this.form.controls['bankAccountNumber'].invalid">There is an error with the bank account number:
+    <ul>
+      <li *ngIf="this.form.controls['bankAccountNumber'].errors.required">The field is mandatory</li>
+      <li *ngIf="this.form.controls['bankAccountNumber'].errors.minlength">The field is too short</li>
+    </ul>
+  </li>
+</ul>
+
+<form [formGroup]="form" (ngSubmit)="add()">
+  <div>
+    <label for="companyName">company name</label>
+    <input type="text" id="companyName" formControlName="companyName">
+  </div>
+  <div>
+    <label for="bankAccountNumber">bank account number</label>
+    <input type="text" id="bankAccountNumber" formControlName="bankAccountNumber">
+  </div>
+  <button type="submit">add</button>
+</form>
