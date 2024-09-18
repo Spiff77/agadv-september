@@ -10,9 +10,9 @@ import {AnonymizeBankAccountPipe} from '../anonymize-bank-account.pipe';
 
 
 const routes: Routes = [
-  { path: 'suppliers', component: SupplierListComponent },
-  { path: 'suppliers/add', component: SupplierAddComponent },
-  { path: 'suppliers/:id', component: SupplierDetailComponent },
+  { path: '', component: SupplierListComponent },
+  { path: 'add', component: SupplierAddComponent },
+  { path: ':id', component: SupplierDetailComponent },
 ];
 
 

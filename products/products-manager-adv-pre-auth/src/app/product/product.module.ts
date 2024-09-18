@@ -8,11 +8,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent },
-  { path: 'products/add', component: ProductAddComponent },
-  { path: 'products/:id', component: ProductDetailComponent },
+  { path: '', component: ProductListComponent },
+  { path: 'add', component: ProductAddComponent },
+  { path: ':id', component: ProductDetailComponent },
 ];
-
 
 @NgModule({
   declarations: [

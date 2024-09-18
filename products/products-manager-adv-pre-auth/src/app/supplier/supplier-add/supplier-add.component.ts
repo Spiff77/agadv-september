@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ProductHttpService} from '../../product-http.service';
 import {Router} from '@angular/router';
+import {SupplierHttpService} from '../../supplier-http.service';
 
 @Component({
   selector: 'app-supplier-add',
@@ -13,7 +13,7 @@ export class SupplierAddComponent implements OnInit {
   form: FormGroup;
   formSubmitted = false;
 
-  constructor(private fb: FormBuilder, private productService: ProductHttpService,
+  constructor(private fb: FormBuilder, private supplierService: SupplierHttpService,
               private route: Router) { }
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class SupplierAddComponent implements OnInit {
   add(): void {
     this.formSubmitted = true;
     if (this.form.valid) {
-      this.productService.add(this.form.value).subscribe(v => this.route.navigateByUrl('/products'));
+      this.supplierService.add(this.form.value).subscribe(v => this.route.navigateByUrl('/products'));
     }
   }
 }
