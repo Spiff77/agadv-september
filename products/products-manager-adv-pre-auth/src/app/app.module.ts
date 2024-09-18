@@ -21,6 +21,7 @@ import { SupplierDetailComponent } from './supplier/supplier-detail/supplier-det
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import {ProductModule} from './product/product.module';
 import {SupplierModule} from './supplier/supplier.module';
+import {SharedModule} from './shared.module';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -40,6 +41,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     ProductModule,
+    SharedModule,
     SupplierModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
