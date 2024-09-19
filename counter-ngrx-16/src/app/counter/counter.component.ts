@@ -1,6 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {decrement, increment, reset} from '../store/counter.action';
+import {counterType} from '../store/counter.reducer';
 
 @Component({
   selector: 'app-counter',
@@ -10,7 +11,7 @@ import {decrement, increment, reset} from '../store/counter.action';
 export class CounterComponent implements OnInit{
   value = 0;
 
-  store = inject(Store<{counterStore: number}>)
+  store = inject(Store<counterType>)
 
   ngOnInit(): void {
     this.store.subscribe(s => {
