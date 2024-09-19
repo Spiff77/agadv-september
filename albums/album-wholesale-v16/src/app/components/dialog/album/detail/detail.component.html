@@ -1,0 +1,15 @@
+<mat-dialog-content>
+  <h1 mat-dialog-title>{{data.album.name}}</h1>
+  <mat-dialog-content>
+    <p>Artist: {{data.album.artist}}</p>
+    <p>Description: {{data.album.description}}</p>
+    <p>Price: {{data.album.price}}</p>
+    <!-- load comment link -->
+    <a class="primary" (click)="showComments = true"  *ngIf="!showComments"> Charger les commentaires</a>
+    <app-comments [albumId]="data.album.id" *ngIf="showComments"></app-comments>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">Close</button>
+  </mat-dialog-actions>
+</mat-dialog-content>

@@ -1,0 +1,13 @@
+:host{
+  display: block;
+  padding-left:10px;
+
+  h4{
+    text-decoration: underline;
+  }
+
+  &>div{
+    padding-left:10px;
+    border-left: 4px solid blue;
+  }
+}

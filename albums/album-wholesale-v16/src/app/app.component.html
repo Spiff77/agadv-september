@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-content>
+  <p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div routerLink="/home">Home</div>
+      <div routerLink="/add">Add an Album</div>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="openCart()">
+        <mat-icon [matBadge]="cartService.totalItems" matBadgePosition="after" matBadgeColor="accent">shopping_cart</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+    <mat-drawer-container class="container">
+      <mat-drawer #drawer mode="side" disableClose="true" [opened]="currentRoute==='shop'" >
+        <h3><mat-icon>account_circle</mat-icon>Welcome Admin</h3>
+        <h4>You have {{cartService.totalItems}} item in your cart</h4>
+        <ul>
+          <li *ngFor="let album of cart;"  >
+            <div>
+              {{album.name}} x {{album.quantity}}
+            </div>
+             <div class="actions">
+                <mat-icon (click)="removeOneInCart(album)">remove_circle</mat-icon>
+                <mat-icon (click)="addOneInCart(album)">add_circle</mat-icon>
+             </div>
+          </li>
+        </ul>
+      </mat-drawer>
+      <mat-drawer-content>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </mat-card-content>
+</mat-card>
+
