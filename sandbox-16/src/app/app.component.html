@@ -1,4 +1,26 @@
 <h1>Welcome to the page of {{ns.name}}</h1>
 <app-menu></app-menu>
+
+<form [formGroup]="theForm">
+
+  <div>
+    <label for="theName">Name</label>
+    <input type="text" formControlName="name" id="theName">
+  </div>
+
+  <fieldset formArrayName="colors">
+    <legend>Fav colors</legend>
+    <ul>
+      <li *ngFor="let color of getColorsFormArray().controls; let i = index">
+        <input type="text" [formControlName]="i"/> <span (click)="removeColor(i)">[x]</span>
+      </li>
+    </ul>
+    <button (click)="addColor()">Add color</button>
+  </fieldset>
+</form>
+
+<pre>
+  {{theForm.value | json}}
+</pre>
 <router-outlet></router-outlet>
 

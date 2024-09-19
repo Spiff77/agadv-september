@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {NameService} from './name.service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path:'a', loadChildren: () => import('./a/a.module').then(m => m.AModule)},
@@ -15,10 +16,11 @@ const routes: Routes = [
     AppComponent,
     MenuComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        ReactiveFormsModule
+    ],
   providers: [NameService],
   bootstrap: [AppComponent]
 })
