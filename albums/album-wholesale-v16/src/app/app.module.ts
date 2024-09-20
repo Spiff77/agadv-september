@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import {AlbumListComponent} from './components/albums/album-list/album-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,10 +22,14 @@ import {AddComponent} from './components/dialog/album/add/add.component';
 import {DetailComponent} from './components/dialog/album/detail/detail.component';
 import { CommentsComponent } from './components/albums/comments/comments.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { AlbumAddComponent } from './components/albums/album-add/album-add.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 const routes: Routes = [
   {path: 'shop', component: AlbumListComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'add', component: AlbumAddComponent},
   {path: '',  redirectTo: '/home', pathMatch: 'full'},
 ];
 @NgModule({
@@ -37,26 +40,29 @@ const routes: Routes = [
         HomeComponent,
         AddComponent,
         DetailComponent,
-        CommentsComponent
+        CommentsComponent,
+        AlbumAddComponent
     ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule,
-        MatTableModule,
-        MatToolbarModule,
-        MatDialogModule,
-        MatBadgeModule,
-        HttpClientModule,
-        MatSidenavModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatCardModule,
-        MatIconModule,
-        RouterModule.forRoot(routes),
-        MatChipsModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatBadgeModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCardModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    MatChipsModule,
+    MatInputModule
+  ],
     providers: [],
     exports: [
         CommentsComponent,

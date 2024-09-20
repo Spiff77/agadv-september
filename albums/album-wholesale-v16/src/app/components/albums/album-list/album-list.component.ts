@@ -26,6 +26,10 @@ export class AlbumListComponent implements OnInit {
     });
   }
 
+  identifyAlbum(index:number, item: Album){
+    return item.id
+  }
+
   addToCart(album: Album) {
     this.cartService.add(album);
   }

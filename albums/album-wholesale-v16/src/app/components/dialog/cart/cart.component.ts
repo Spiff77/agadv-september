@@ -1,7 +1,20 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {AlbumCart, CartService} from '../../../services/cart.service';
 import {Album} from '../../../model/album.model';
-import {concatMap, finalize, interval, map, mergeMap, of, Subject, switchAll, switchMap, takeWhile, tap} from 'rxjs';
+import {
+  concatMap,
+  exhaustMap,
+  finalize,
+  interval,
+  map,
+  mergeMap,
+  of,
+  Subject,
+  switchAll,
+  switchMap,
+  takeWhile,
+  tap
+} from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +27,6 @@ export class CartComponent implements OnInit {
   cart:AlbumCart[] = this.cartservice.cartAlbums;
   displayedColumns: string[] = ['id', 'name', 'artist', 'price', 'quantity', 'totalprice'];
 
-
   startProcess$ = new Subject<number>()
   process$ = interval(400).pipe(
     takeWhile(v => (v*10) <= 100 ),
@@ -24,12 +36,12 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.startProcess$.pipe(
-      mergeMap(id => {
+      exhaustMap(id => {
         return this.process$.pipe(map(v => {
           this.processProgression =  v == 0 ? 1 : (v*10);
           return {id, progression: v*10}
         }),
-        )}),
+      )}),
     ).subscribe(v => {
       this.processId = v.id
       this.processProgression = v.progression

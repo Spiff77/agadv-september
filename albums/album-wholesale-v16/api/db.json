@@ -1,7 +1,7 @@
 {
   "albums": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Joe's Garage",
       "artist": "Frank Zappa",
       "description": "Joe's Garage is a three-part rock opera released by American musician Frank Zappa in September and November 1979",
@@ -13,7 +13,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Abbey Road",
       "artist": "The Beatles",
       "description": "Abbey Road is the eleventh studio album by English rock band the Beatles, released on 26 September 1969",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Sticky Fingers",
       "artist": "The Rolling Stones",
       "description": "Sticky Fingers is the ninth British and eleventh American studio album by the English rock band the Rolling Stones, released in April 1971",
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Tommy",
       "artist": "The Who",
       "description": "Tommy is the fourth studio album by the English rock band The Who, a double album first released in May 1969",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Led Zeppelin IV",
       "artist": "Led Zeppelin",
       "description": "Led Zeppelin IV is the fourth studio album by the English rock band Led Zeppelin, released on 8 November 1971",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "The Dark Side of the Moon",
       "artist": "Pink Floyd",
       "description": "The Dark Side of the Moon is the eighth studio album by English rock band Pink Floyd, released on 1 March 1973",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Ace of Spades",
       "artist": "Motörhead",
       "description": "Ace of Spades is the fourth studio album by the band Motörhead, released on 8 November 1980",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Back in Black",
       "artist": "AC/DC",
       "description": "Back in Black is the seventh studio album by Australian rock band AC/DC, released on 25 July 1980",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Hotel California",
       "artist": "Eagles",
       "description": "Hotel California is the fifth studio album by American rock band the Eagles, released on December 8, 1976",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Born to Run",
       "artist": "Bruce Springsteen",
       "description": "Born to Run is the third studio album by American singer-songwriter Bruce Springsteen, released on August 25, 1975",
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Rumours",
       "artist": "Fleetwood Mac",
       "description": "Rumours is the eleventh studio album by British-American rock band Fleetwood Mac, released on February 4, 1977",
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "The Joshua Tree",
       "artist": "U2",
       "description": "The Joshua Tree is the fifth studio album by Irish rock band U2, released on March 9, 1987",
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Nevermind",
       "artist": "Nirvana",
       "description": "Nevermind is the second studio album by American rock band Nirvana, released on September 24, 1991",
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Thriller",
       "artist": "Michael Jackson",
       "description": "Thriller is the sixth studio album by American singer Michael Jackson, released on November 30, 1982",
@@ -181,7 +181,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "The Rise and Fall of Ziggy Stardust",
       "artist": "David Bowie",
       "description": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars is the fifth studio album by English musician David Bowie, released on June 16, 1972",
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Blood Sugar Sex Magik",
       "artist": "Red Hot Chili Peppers",
       "description": "Blood Sugar Sex Magik is the fifth studio album by American rock band Red Hot Chili Peppers, released on September 24, 1991",
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "The Velvet Underground & Nico",
       "artist": "The Velvet Underground",
       "description": "The Velvet Underground & Nico is the debut album by American rock band the Velvet Underground, released on March 12, 1967",
@@ -217,7 +217,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Bridge over Troubled Water",
       "artist": "Simon & Garfunkel",
       "description": "Bridge over Troubled Water is the fifth and final studio album by American folk rock duo Simon & Garfunkel, released on January 26, 1970",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Electric Ladyland",
       "artist": "Jimi Hendrix",
       "description": "Electric Ladyland is the third and final studio album by the Jimi Hendrix Experience, released on October 16, 1968",
@@ -241,7 +241,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "London Calling",
       "artist": "The Clash",
       "description": "London Calling is the third studio album by English rock band the Clash, released on 14 December 1979",
@@ -253,7 +253,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "The Queen Is Dead",
       "artist": "The Smiths",
       "description": "The Queen Is Dead is the third studio album by English rock band the Smiths, released on 16 June 1986",
@@ -265,7 +265,7 @@
       ]
     },
     {
-      "id": 43,
+      "id": "43",
       "name": "Sgt. Pepper's Lonely Hearts Club Band",
       "artist": "The Beatles",
       "description": "Sgt. Pepper's Lonely Hearts Club Band is the eighth studio album by the English rock band the Beatles, released on 26 May 1967",
@@ -277,7 +277,7 @@
       ]
     },
     {
-      "id": 44,
+      "id": "44",
       "name": "The Doors",
       "artist": "The Doors",
       "description": "The Doors is the debut album by the American rock band the Doors, released on January 4, 1967",
@@ -289,7 +289,7 @@
       ]
     },
     {
-      "id": 46,
+      "id": "46",
       "name": "Court and Spark",
       "artist": "Joni Mitchell",
       "description": "Court and Spark is the sixth studio album by Canadian singer-songwriter Joni Mitchell, released on January 1, 1974",
@@ -301,7 +301,7 @@
       ]
     },
     {
-      "id": 45,
+      "id": "45",
       "name": "Highway 61 Revisited",
       "artist": "Bob Dylan",
       "description": "Highway 61 Revisited is the sixth studio album by American singer-songwriter Bob Dylan, released on August 30, 1965",
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "id": 48,
+      "id": "48",
       "name": "Kind of Blue",
       "artist": "Miles Davis",
       "description": "Kind of Blue is a studio album by American jazz trumpeter Miles Davis, released on August 17, 1959",
@@ -325,7 +325,7 @@
       ]
     },
     {
-      "id": 47,
+      "id": "47",
       "name": "Aja",
       "artist": "Steely Dan",
       "description": "Aja is the sixth studio album by the American jazz rock band Steely Dan, released on September 23, 1977",
@@ -337,7 +337,7 @@
       ]
     },
     {
-      "id": 50,
+      "id": "50",
       "name": "Ziggy Stardust",
       "artist": "David Bowie",
       "description": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars is the fifth studio album by English musician David Bowie, released on June 16, 1972",
@@ -349,16 +349,35 @@
       ]
     },
     {
-      "id": 51,
-      "name": "The Dark Side of the Moon",
-      "artist": "Pink Floyd",
-      "description": "The Dark Side of the Moon is the eighth studio album by English rock band Pink Floyd, released on 1 March 1973",
-      "price": 29.9,
+      "id": 21,
+      "name": "London Calling",
+      "artist": "The Clash",
+      "description": "London Calling is the third studio album by English rock band the Clash, released on 14 December 1979",
+      "price": 24.9,
       "tags": [
         "rock",
-        "progressive rock",
+        "pop",
         "classic"
       ]
+    },
+    {
+      "id": 20,
+      "name": "Electric Ladyland",
+      "artist": "Jimi Hendrix",
+      "description": "Electric Ladyland is the third and final studio album by the Jimi Hendrix Experience, released on October 16, 1968",
+      "price": 23.9,
+      "tags": [
+        "rock",
+        "pop",
+        "classic"
+      ]
+    },
+    {
+      "id": "f247",
+      "name": "Mel on road",
+      "artist": "Manel",
+      "price": 20,
+      "description": "un album chouette a ecouter"
     }
   ],
   "comments": [
