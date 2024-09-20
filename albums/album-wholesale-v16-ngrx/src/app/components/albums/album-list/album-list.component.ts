@@ -9,12 +9,18 @@ import {async, map, Observable} from 'rxjs';
 import {CartState} from '../../../store/cart/cart.reducer';
 import {selectProductById} from '../../../store/cart/cart.selectors';
 import {loadAlbumsStart} from '../../../store/album/album.actions';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+import { NgFor, NgIf, AsyncPipe, SlicePipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-album-list',
-  templateUrl: './album-list.component.html',
-  styleUrls: ['./album-list.component.scss']
+    selector: 'app-album-list',
+    templateUrl: './album-list.component.html',
+    styleUrls: ['./album-list.component.scss'],
+    standalone: true,
+    imports: [NgFor, MatCardModule, MatChipsModule, MatButtonModule, NgIf, AsyncPipe, SlicePipe]
 })
 export class AlbumListComponent implements OnInit {
 

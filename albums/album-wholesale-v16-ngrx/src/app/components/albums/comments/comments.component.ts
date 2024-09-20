@@ -1,11 +1,14 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
 import {AlbumCommentsService} from '../../../services/album-comments.service';
 import {Comment} from '../../../model/comment.model';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.scss']
+    selector: 'app-comments',
+    templateUrl: './comments.component.html',
+    styleUrls: ['./comments.component.scss'],
+    standalone: true,
+    imports: [NgFor]
 })
 export class CommentsComponent implements OnInit{
 

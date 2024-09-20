@@ -1,12 +1,17 @@
 import {Component, inject} from '@angular/core';
 import {AlbumService} from '../../../../services/album.service';
 import {Album} from '../../../../model/album.model';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { NgFor, SlicePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+    selector: 'app-add',
+    templateUrl: './add.component.html',
+    styleUrls: ['./add.component.scss'],
+    standalone: true,
+    imports: [MatDialogModule, NgFor, MatCardModule, MatButtonModule, SlicePipe]
 })
 export class AddComponent {
 
