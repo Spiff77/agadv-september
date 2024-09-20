@@ -1,0 +1,14 @@
+:host{
+  display: block;
+  background-color: lightyellow;
+  border: 1px solid yellow;
+  padding: 25px;
+  text-align: center;
+  div {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+}
