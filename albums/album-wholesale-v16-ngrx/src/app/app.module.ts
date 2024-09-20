@@ -11,7 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCard, MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBadgeModule} from '@angular/material/badge';
 import { CartComponent } from './components/dialog/cart/cart.component';
@@ -37,25 +37,25 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '',  redirectTo: '/home', pathMatch: 'full'},
 ];
-@NgModule({
-  declarations: [
-    AppComponent,
-    AlbumListComponent,
-    CartComponent,
-    HomeComponent,
-    AddComponent,
-    DetailComponent,
-    CommentsComponent
-  ],
-    imports: [
-        BrowserModule,
+@NgModule({ declarations: [
+        AppComponent,
+        AlbumListComponent,
+        CartComponent,
+        HomeComponent,
+        AddComponent,
+        DetailComponent,
+        CommentsComponent
+    ],
+    exports: [
+        CommentsComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
         BrowserAnimationsModule,
         MatProgressBarModule,
         MatTableModule,
         MatToolbarModule,
         MatDialogModule,
         MatBadgeModule,
-        HttpClientModule,
         MatSidenavModule,
         MatButtonModule,
         MatFormFieldModule,
@@ -63,16 +63,9 @@ const routes: Routes = [
         MatCardModule,
         MatIconModule,
         RouterModule.forRoot(routes),
-        StoreModule.forRoot({cartstore: cartReducer, albumstore: albumReducer}, {}),
+        StoreModule.forRoot({ cartstore: cartReducer, albumstore: albumReducer }, {}),
         EffectsModule.forRoot([AlbumEffect]),
-        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
         MatChipsModule,
-        NgOptimizedImage,
-    ],
-  providers: [],
-  exports: [
-    CommentsComponent
-  ],
-  bootstrap: [AppComponent]
-})
+        NgOptimizedImage], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
