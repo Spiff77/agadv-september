@@ -1,0 +1,12 @@
+<h3>TODO list</h3>
+<ul class="list">
+  <li *ngFor="let todo of todos">
+    <input type="checkbox" [(ngModel)]="todo.done">
+    <span [style.text-decoration]="todo.done ? 'line-through' : 'none'">{{todo.title}}</span>
+  </li>
+</ul>
+
+<form [formGroup]="form" (ngSubmit)="addTodo()">
+  <input type="text" formControlName="title" placeholder="Tache">
+  <button type="submit">OK</button>
+</form>
