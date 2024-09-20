@@ -3,22 +3,21 @@ import {Store} from '@ngrx/store';
 import {decrement, increment, reset} from '../store/counter.action';
 import {counterStoreType} from '../store/counter.reducer';
 import {selectCounterValue} from '../store/counter.selector';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
+  changeDetection:ChangeDetectionStrategy.OnPush,
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent implements OnInit{
-  value = 0;
+  $value:Observable<number> | undefined
 
   store = inject(Store<counterStoreType>)
 
   ngOnInit(): void {
-    this.store.select(selectCounterValue).subscribe(counterValue => {
-      console.log('counter')
-      this.value = counterValue
-    })
+    this.$value = this.store.select(selectCounterValue)
   }
 
   decrementValue() {

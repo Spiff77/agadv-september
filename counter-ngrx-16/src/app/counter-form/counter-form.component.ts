@@ -6,6 +6,7 @@ import {counterType} from '../store/counter.reducer';
 @Component({
   selector: 'app-counter-form',
   templateUrl: './counter-form.component.html',
+  changeDetection:ChangeDetectionStrategy.OnPush,
   styleUrls: ['./counter-form.component.scss']
 })
 export class CounterFormComponent {
