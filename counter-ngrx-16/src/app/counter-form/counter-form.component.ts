@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {update} from '../store/counter.action';
 import {counterType} from '../store/counter.reducer';
@@ -10,10 +10,14 @@ import {counterType} from '../store/counter.reducer';
 })
 export class CounterFormComponent {
   newValue: any;
+  newName: any;
 
   store = inject(Store<counterType>)
 
   changeValue() {
     this.store.dispatch(update({newValue: +this.newValue}))
+  }
+  changeName() {
+    this.store.dispatch(update({newName: this.newName}))
   }
 }

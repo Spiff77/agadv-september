@@ -1,7 +1,8 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {decrement, increment, reset} from '../store/counter.action';
-import {counterType} from '../store/counter.reducer';
+import {counterStoreType} from '../store/counter.reducer';
+import {selectCounterValue} from '../store/counter.selector';
 
 @Component({
   selector: 'app-counter',
@@ -11,11 +12,12 @@ import {counterType} from '../store/counter.reducer';
 export class CounterComponent implements OnInit{
   value = 0;
 
-  store = inject(Store<counterType>)
+  store = inject(Store<counterStoreType>)
 
   ngOnInit(): void {
-    this.store.subscribe(s => {
-      this.value = s.counterStore
+    this.store.select(selectCounterValue).subscribe(counterValue => {
+      console.log('counter')
+      this.value = counterValue
     })
   }
 
