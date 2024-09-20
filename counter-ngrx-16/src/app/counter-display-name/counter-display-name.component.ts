@@ -18,4 +18,5 @@ export class CounterDisplayNameComponent {
   ngOnInit(): void {
     this.name$ = this.store.select(selectCounterName)
   }
+
 }
