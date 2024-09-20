@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  <mat-card *ngFor="let album of albumsAvailable(); let i=index">
+    <mat-card-header>
+      <mat-card-title>{{album.name}}</mat-card-title>
+      <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="'https://picsum.photos/id/'+ ( 50 + i)+'/200/130'" alt="Random picture so far">
+    <mat-card-content>
+      {{album.description | slice:0:140}} ...
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="makeItAvailable(album)">Make this album available</button>
+      <div class="price">£{{album.price}}</div>
+    </mat-card-actions>
+  </mat-card>
+</mat-dialog-content>

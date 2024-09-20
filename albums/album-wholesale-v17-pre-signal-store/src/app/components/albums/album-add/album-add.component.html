@@ -1,0 +1,52 @@
+<h2>Adding an album</h2>
+
+<form [formGroup]="albumForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Album Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Artist</mat-label>
+    <input matInput formControlName="artist">
+  </mat-form-field>
+  <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" type="number">
+    </mat-form-field>
+    <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <br>
+
+      <app-custom-description formControlName="description"></app-custom-description><br>
+
+
+
+
+  <div formArrayName="tags">
+          <h3>Tags</h3>
+          @for (tag of tags.controls; track tag; let i = $index) {
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Tag {{i + 1}}</mat-label>
+                <input matInput [formControlName]="i">
+              </mat-form-field>
+            </div>
+          }
+          <div>
+            <button type="button" mat-raised-button color="primary" (click)="addTag()">Add Tag</button>
+          </div>
+        </div>
+        <br>
+
+          {{albumForm.valid}}
+
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </form>

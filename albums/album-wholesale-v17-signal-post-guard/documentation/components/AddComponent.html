@@ -1,0 +1,1105 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>album-wholesale-v17 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">album-wholesale-v17 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AddComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/dialog/album/add/add.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>MatCardModule</code>
+                            <code>MatDialogModule</code>
+                            <code>MatButtonModule</code>
+                            <code>SlicePipe</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#albumAsideAvailable" >albumAsideAvailable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#albums" >albums</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#albumService" >albumService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#matDialogRef" >matDialogRef</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#albumsAvailable" >albumsAvailable</a>
+                            </li>
+                            <li>
+                                <a href="#makeItAvailable" >makeItAvailable</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="albumsAvailable"></a>
+                    <span class="name">
+                        <span ><b>albumsAvailable</b></span>
+                        <a href="#albumsAvailable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>albumsAvailable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="214"
+                                    class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:214</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeItAvailable"></a>
+                    <span class="name">
+                        <span ><b>makeItAvailable</b></span>
+                        <a href="#makeItAvailable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>makeItAvailable(album: <a href="../undefineds/Album.html" target="_self">Album</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>album</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Album" target="_self" >Album</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="208"
+                                    class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:208</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="albumAsideAvailable"></a>
+                    <span class="name">
+                        <span ><b>albumAsideAvailable</b></span>
+                        <a href="#albumAsideAvailable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal([
+    {
+      &quot;id&quot;: 20,
+      &quot;name&quot;: &quot;Electric Ladyland&quot;,
+      &quot;artist&quot;: &quot;Jimi Hendrix&quot;,
+      &quot;description&quot;: &quot;Electric Ladyland is the third and final studio album by the Jimi Hendrix Experience, released on October 16, 1968&quot;,
+      &quot;price&quot;: 23.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 21,
+      &quot;name&quot;: &quot;London Calling&quot;,
+      &quot;artist&quot;: &quot;The Clash&quot;,
+      &quot;description&quot;: &quot;London Calling is the third studio album by English rock band the Clash, released on 14 December 1979&quot;,
+      &quot;price&quot;: 24.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 43,
+      &quot;name&quot;: &quot;Sgt. Pepper&#x27;s Lonely Hearts Club Band&quot;,
+      &quot;artist&quot;: &quot;The Beatles&quot;,
+      &quot;description&quot;: &quot;Sgt. Pepper&#x27;s Lonely Hearts Club Band is the eighth studio album by the English rock band the Beatles, released on 26 May 1967&quot;,
+      &quot;price&quot;: 28.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 44,
+      &quot;name&quot;: &quot;The Doors&quot;,
+      &quot;artist&quot;: &quot;The Doors&quot;,
+      &quot;description&quot;: &quot;The Doors is the debut album by the American rock band the Doors, released on January 4, 1967&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 45,
+      &quot;name&quot;: &quot;Highway 61 Revisited&quot;,
+      &quot;artist&quot;: &quot;Bob Dylan&quot;,
+      &quot;description&quot;: &quot;Highway 61 Revisited is the sixth studio album by American singer-songwriter Bob Dylan, released on August 30, 1965&quot;,
+      &quot;price&quot;: 24.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 46,
+      &quot;name&quot;: &quot;Court and Spark&quot;,
+      &quot;artist&quot;: &quot;Joni Mitchell&quot;,
+      &quot;description&quot;: &quot;Court and Spark is the sixth studio album by Canadian singer-songwriter Joni Mitchell, released on January 1, 1974&quot;,
+      &quot;price&quot;: 25.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 47,
+      &quot;name&quot;: &quot;Aja&quot;,
+      &quot;artist&quot;: &quot;Steely Dan&quot;,
+      &quot;description&quot;: &quot;Aja is the sixth studio album by the American jazz rock band Steely Dan, released on September 23, 1977&quot;,
+      &quot;price&quot;: 27.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 48,
+      &quot;name&quot;: &quot;Kind of Blue&quot;,
+      &quot;artist&quot;: &quot;Miles Davis&quot;,
+      &quot;description&quot;: &quot;Kind of Blue is a studio album by American jazz trumpeter Miles Davis, released on August 17, 1959&quot;,
+      &quot;price&quot;: 23.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 49,
+      &quot;name&quot;: &quot;Rum Sodomy &amp; the Lash&quot;,
+      &quot;artist&quot;: &quot;The Pogues&quot;,
+      &quot;description&quot;: &quot;Rum Sodomy &amp; the Lash is the second studio album by the London-based folk punk band the Pogues, released on 5 August 1985&quot;,
+      &quot;price&quot;: 21.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 50,
+      &quot;name&quot;: &quot;Ziggy Stardust&quot;,
+      &quot;artist&quot;: &quot;David Bowie&quot;,
+      &quot;description&quot;: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars is the fifth studio album by English musician David Bowie, released on June 16, 1972&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 51,
+      &quot;name&quot;: &quot;The Dark Side of the Moon&quot;,
+      &quot;artist&quot;: &quot;Pink Floyd&quot;,
+      &quot;description&quot;: &quot;The Dark Side of the Moon is the eighth studio album by English rock band Pink Floyd, released on 1 March 1973&quot;,
+      &quot;price&quot;: 29.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 52,
+      &quot;name&quot;: &quot;Back in Black&quot;,
+      &quot;artist&quot;: &quot;AC/DC&quot;,
+      &quot;description&quot;: &quot;Back in Black is the seventh studio album by Australian rock band AC/DC, released on 25 July 1980&quot;,
+      &quot;price&quot;: 30.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 53,
+      &quot;name&quot;: &quot;Thriller&quot;,
+      &quot;artist&quot;: &quot;Michael Jackson&quot;,
+      &quot;description&quot;: &quot;Thriller is the sixth studio album by American singer Michael Jackson, released on November 30, 1982&quot;,
+      &quot;price&quot;: 31.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 54,
+      &quot;name&quot;: &quot;A Night at the Opera&quot;,
+      &quot;artist&quot;: &quot;Queen&quot;,
+      &quot;description&quot;: &quot;A Night at the Opera is the fourth studio album by the British rock band Queen, released on 21 November 1975&quot;,
+      &quot;price&quot;: 28.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 55,
+      &quot;name&quot;: &quot;Born to Run&quot;,
+      &quot;artist&quot;: &quot;Bruce Springsteen&quot;,
+      &quot;description&quot;: &quot;Born to Run is the third studio album by American singer-songwriter Bruce Springsteen, released on August 25, 1975&quot;,
+      &quot;price&quot;: 29.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 56,
+      &quot;name&quot;: &quot;Nevermind&quot;,
+      &quot;artist&quot;: &quot;Nirvana&quot;,
+      &quot;description&quot;: &quot;Nevermind is the second studio album by American rock band Nirvana, released on September 24, 1991&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 57,
+      &quot;name&quot;: &quot;Hotel California&quot;,
+      &quot;artist&quot;: &quot;Eagles&quot;,
+      &quot;description&quot;: &quot;Hotel California is the fifth studio album by American rock band the Eagles, released on December 8, 1976&quot;,
+      &quot;price&quot;: 27.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 58,
+      &quot;name&quot;: &quot;Blood on the Tracks&quot;,
+      &quot;artist&quot;: &quot;Bob Dylan&quot;,
+      &quot;description&quot;: &quot;Blood on the Tracks is the fifteenth studio album by American singer-songwriter Bob Dylan, released on January 20, 1975&quot;,
+      &quot;price&quot;: 24.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 59,
+      &quot;name&quot;: &quot;The Rise and Fall of Ziggy Stardust&quot;,
+      &quot;artist&quot;: &quot;David Bowie&quot;,
+      &quot;description&quot;: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars is the fifth studio album by English musician David Bowie, released on June 16, 1972&quot;,
+      &quot;price&quot;: 25.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 60,
+      &quot;name&quot;: &quot;Blue&quot;,
+      &quot;artist&quot;: &quot;Joni Mitchell&quot;,
+      &quot;description&quot;: &quot;Blue is the fourth studio album by Canadian singer-songwriter Joni Mitchell, released on June 22, 1971&quot;,
+      &quot;price&quot;: 22.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 61,
+      &quot;name&quot;: &quot;Bridge over Troubled Water&quot;,
+      &quot;artist&quot;: &quot;Simon &amp; Garfunkel&quot;,
+      &quot;description&quot;: &quot;Bridge over Troubled Water is the fifth and final studio album by American folk rock duo Simon &amp; Garfunkel, released on January 26, 1970&quot;,
+      &quot;price&quot;: 23.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 62,
+      &quot;name&quot;: &quot;Court and Spark&quot;,
+      &quot;artist&quot;: &quot;Joni Mitchell&quot;,
+      &quot;description&quot;: &quot;Court and Spark is the sixth studio album by Canadian singer-songwriter Joni Mitchell, released on January 1, 1974&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    }
+  ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="albums"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>albums</b></span>
+                        <a href="#albums"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;Album[]&gt;([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="albumService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>albumService</b></span>
+                        <a href="#albumService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AlbumService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="matDialogRef"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>matDialogRef</b></span>
+                        <a href="#matDialogRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(MatDialog)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/dialog/album/add/add.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ChangeDetectionStrategy, Component, inject, signal} from &#x27;@angular/core&#x27;;
+import {AlbumService} from &#x27;../../../../services/album.service&#x27;;
+import {Album} from &#x27;../../../../model/album.model&#x27;;
+import {MatDialog, MatDialogModule} from &#x27;@angular/material/dialog&#x27;;
+import {MatCardModule} from &#x27;@angular/material/card&#x27;;
+import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
+import {SlicePipe} from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-add&#x27;,
+  templateUrl: &#x27;./add.component.html&#x27;,
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    MatCardModule,
+    MatDialogModule,
+    MatButtonModule,
+    SlicePipe
+],
+  styleUrls: [&#x27;./add.component.scss&#x27;]
+})
+export class AddComponent {
+
+  private albumService &#x3D; inject(AlbumService);
+  private matDialogRef &#x3D; inject(MatDialog);
+  private albums&#x3D; signal&lt;Album[]&gt;([])
+
+  /* look at available albums in api/db.json and add 5 more in this array */
+  albumAsideAvailable &#x3D; signal([
+    {
+      &quot;id&quot;: 20,
+      &quot;name&quot;: &quot;Electric Ladyland&quot;,
+      &quot;artist&quot;: &quot;Jimi Hendrix&quot;,
+      &quot;description&quot;: &quot;Electric Ladyland is the third and final studio album by the Jimi Hendrix Experience, released on October 16, 1968&quot;,
+      &quot;price&quot;: 23.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 21,
+      &quot;name&quot;: &quot;London Calling&quot;,
+      &quot;artist&quot;: &quot;The Clash&quot;,
+      &quot;description&quot;: &quot;London Calling is the third studio album by English rock band the Clash, released on 14 December 1979&quot;,
+      &quot;price&quot;: 24.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 43,
+      &quot;name&quot;: &quot;Sgt. Pepper&#x27;s Lonely Hearts Club Band&quot;,
+      &quot;artist&quot;: &quot;The Beatles&quot;,
+      &quot;description&quot;: &quot;Sgt. Pepper&#x27;s Lonely Hearts Club Band is the eighth studio album by the English rock band the Beatles, released on 26 May 1967&quot;,
+      &quot;price&quot;: 28.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 44,
+      &quot;name&quot;: &quot;The Doors&quot;,
+      &quot;artist&quot;: &quot;The Doors&quot;,
+      &quot;description&quot;: &quot;The Doors is the debut album by the American rock band the Doors, released on January 4, 1967&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 45,
+      &quot;name&quot;: &quot;Highway 61 Revisited&quot;,
+      &quot;artist&quot;: &quot;Bob Dylan&quot;,
+      &quot;description&quot;: &quot;Highway 61 Revisited is the sixth studio album by American singer-songwriter Bob Dylan, released on August 30, 1965&quot;,
+      &quot;price&quot;: 24.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 46,
+      &quot;name&quot;: &quot;Court and Spark&quot;,
+      &quot;artist&quot;: &quot;Joni Mitchell&quot;,
+      &quot;description&quot;: &quot;Court and Spark is the sixth studio album by Canadian singer-songwriter Joni Mitchell, released on January 1, 1974&quot;,
+      &quot;price&quot;: 25.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 47,
+      &quot;name&quot;: &quot;Aja&quot;,
+      &quot;artist&quot;: &quot;Steely Dan&quot;,
+      &quot;description&quot;: &quot;Aja is the sixth studio album by the American jazz rock band Steely Dan, released on September 23, 1977&quot;,
+      &quot;price&quot;: 27.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 48,
+      &quot;name&quot;: &quot;Kind of Blue&quot;,
+      &quot;artist&quot;: &quot;Miles Davis&quot;,
+      &quot;description&quot;: &quot;Kind of Blue is a studio album by American jazz trumpeter Miles Davis, released on August 17, 1959&quot;,
+      &quot;price&quot;: 23.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 49,
+      &quot;name&quot;: &quot;Rum Sodomy &amp; the Lash&quot;,
+      &quot;artist&quot;: &quot;The Pogues&quot;,
+      &quot;description&quot;: &quot;Rum Sodomy &amp; the Lash is the second studio album by the London-based folk punk band the Pogues, released on 5 August 1985&quot;,
+      &quot;price&quot;: 21.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 50,
+      &quot;name&quot;: &quot;Ziggy Stardust&quot;,
+      &quot;artist&quot;: &quot;David Bowie&quot;,
+      &quot;description&quot;: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars is the fifth studio album by English musician David Bowie, released on June 16, 1972&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 51,
+      &quot;name&quot;: &quot;The Dark Side of the Moon&quot;,
+      &quot;artist&quot;: &quot;Pink Floyd&quot;,
+      &quot;description&quot;: &quot;The Dark Side of the Moon is the eighth studio album by English rock band Pink Floyd, released on 1 March 1973&quot;,
+      &quot;price&quot;: 29.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 52,
+      &quot;name&quot;: &quot;Back in Black&quot;,
+      &quot;artist&quot;: &quot;AC/DC&quot;,
+      &quot;description&quot;: &quot;Back in Black is the seventh studio album by Australian rock band AC/DC, released on 25 July 1980&quot;,
+      &quot;price&quot;: 30.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 53,
+      &quot;name&quot;: &quot;Thriller&quot;,
+      &quot;artist&quot;: &quot;Michael Jackson&quot;,
+      &quot;description&quot;: &quot;Thriller is the sixth studio album by American singer Michael Jackson, released on November 30, 1982&quot;,
+      &quot;price&quot;: 31.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 54,
+      &quot;name&quot;: &quot;A Night at the Opera&quot;,
+      &quot;artist&quot;: &quot;Queen&quot;,
+      &quot;description&quot;: &quot;A Night at the Opera is the fourth studio album by the British rock band Queen, released on 21 November 1975&quot;,
+      &quot;price&quot;: 28.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 55,
+      &quot;name&quot;: &quot;Born to Run&quot;,
+      &quot;artist&quot;: &quot;Bruce Springsteen&quot;,
+      &quot;description&quot;: &quot;Born to Run is the third studio album by American singer-songwriter Bruce Springsteen, released on August 25, 1975&quot;,
+      &quot;price&quot;: 29.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 56,
+      &quot;name&quot;: &quot;Nevermind&quot;,
+      &quot;artist&quot;: &quot;Nirvana&quot;,
+      &quot;description&quot;: &quot;Nevermind is the second studio album by American rock band Nirvana, released on September 24, 1991&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 57,
+      &quot;name&quot;: &quot;Hotel California&quot;,
+      &quot;artist&quot;: &quot;Eagles&quot;,
+      &quot;description&quot;: &quot;Hotel California is the fifth studio album by American rock band the Eagles, released on December 8, 1976&quot;,
+      &quot;price&quot;: 27.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 58,
+      &quot;name&quot;: &quot;Blood on the Tracks&quot;,
+      &quot;artist&quot;: &quot;Bob Dylan&quot;,
+      &quot;description&quot;: &quot;Blood on the Tracks is the fifteenth studio album by American singer-songwriter Bob Dylan, released on January 20, 1975&quot;,
+      &quot;price&quot;: 24.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 59,
+      &quot;name&quot;: &quot;The Rise and Fall of Ziggy Stardust&quot;,
+      &quot;artist&quot;: &quot;David Bowie&quot;,
+      &quot;description&quot;: &quot;The Rise and Fall of Ziggy Stardust and the Spiders from Mars is the fifth studio album by English musician David Bowie, released on June 16, 1972&quot;,
+      &quot;price&quot;: 25.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 60,
+      &quot;name&quot;: &quot;Blue&quot;,
+      &quot;artist&quot;: &quot;Joni Mitchell&quot;,
+      &quot;description&quot;: &quot;Blue is the fourth studio album by Canadian singer-songwriter Joni Mitchell, released on June 22, 1971&quot;,
+      &quot;price&quot;: 22.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 61,
+      &quot;name&quot;: &quot;Bridge over Troubled Water&quot;,
+      &quot;artist&quot;: &quot;Simon &amp; Garfunkel&quot;,
+      &quot;description&quot;: &quot;Bridge over Troubled Water is the fifth and final studio album by American folk rock duo Simon &amp; Garfunkel, released on January 26, 1970&quot;,
+      &quot;price&quot;: 23.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    },
+    {
+      &quot;id&quot;: 62,
+      &quot;name&quot;: &quot;Court and Spark&quot;,
+      &quot;artist&quot;: &quot;Joni Mitchell&quot;,
+      &quot;description&quot;: &quot;Court and Spark is the sixth studio album by Canadian singer-songwriter Joni Mitchell, released on January 1, 1974&quot;,
+      &quot;price&quot;: 26.90,
+      &quot;tags&quot;: [&quot;rock&quot;, &quot;pop&quot;, &quot;classic&quot;]
+    }
+  ])
+
+  ngOnInit() {
+    this.albumService.findAll().subscribe(albums &#x3D;&gt; {
+      this.albums.set(albums);
+    });
+  }
+
+  albumsAvailable() {
+    return this.albumAsideAvailable().filter(album &#x3D;&gt; this.albums().find(a &#x3D;&gt; a.id &#x3D;&#x3D;&#x3D; album.id) &#x3D;&#x3D;&#x3D; undefined);
+  }
+
+  makeItAvailable(album: Album) {
+    this.albumService.save(album).subscribe(() &#x3D;&gt; {
+      this.matDialogRef.closeAll();
+    })
+
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-dialog-content&gt;
+  @for (album of albumsAvailable(); track album; let i &#x3D; $index) {
+    &lt;mat-card&gt;
+      &lt;mat-card-header&gt;
+        &lt;mat-card-title&gt;{{album.name}}&lt;/mat-card-title&gt;
+        &lt;mat-card-subtitle&gt;{{album.artist}}&lt;/mat-card-subtitle&gt;
+      &lt;/mat-card-header&gt;
+      &lt;img mat-card-image [src]&#x3D;&quot;&#x27;https://picsum.photos/id/&#x27;+ ( 50 + i)+&#x27;/200/130&#x27;&quot; alt&#x3D;&quot;Random picture so far&quot;&gt;
+      &lt;mat-card-content&gt;
+        {{album.description | slice:0:140}} ...
+      &lt;/mat-card-content&gt;
+      &lt;mat-card-actions&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;makeItAvailable(album)&quot;&gt;Make this album available&lt;/button&gt;
+        &lt;div class&#x3D;&quot;price&quot;&gt;£{{album.price}}&lt;/div&gt;
+      &lt;/mat-card-actions&gt;
+    &lt;/mat-card&gt;
+  }
+&lt;/mat-dialog-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./add.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host{
+  display: flex;
+  margin-top: 20px;
+  margin-left:20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  row-gap: 20px;
+  column-gap: 20px;
+  .mat-drawer-container{
+    height:85vh;
+  }
+  .mdc-card{
+    max-width: 380px !important;
+  }
+  .header-image {
+    background-image: url(&#x27;https://material.angular.io/assets/img/examples/shiba1.jpg&#x27;);
+    background-size: cover;
+  }
+  .mat-mdc-card-actions{
+    display: flex;
+    justify-content: space-between;
+  }
+  .price{
+    color: #0035c5;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .mat-mdc-card-image{
+    padding:20px 0;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-dialog-content>  @for (album of albumsAvailable(); track album; let i = $index) {    <mat-card>      <mat-card-header>        <mat-card-title>{{album.name}}</mat-card-title>        <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>      </mat-card-header>      <img mat-card-image [src]="\'https://picsum.photos/id/\'+ ( 50 + i)+\'/200/130\'" alt="Random picture so far">      <mat-card-content>        {{album.description | slice:0:140}} ...      </mat-card-content>      <mat-card-actions>        <button mat-flat-button color="primary" (click)="makeItAvailable(album)">Make this album available</button>        <div class="price">£{{album.price}}</div>      </mat-card-actions>    </mat-card>  }</mat-dialog-content></div>'
+    var COMPONENTS = [{'name': 'AddComponent', 'selector': 'app-add'},{'name': 'AlbumAddComponent', 'selector': 'app-album-add'},{'name': 'AlbumListComponent', 'selector': 'app-album-list'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'CustomDescriptionComponent', 'selector': 'app-custom-description'},{'name': 'DetailComponent', 'selector': 'app-detail'},{'name': 'HomeComponent', 'selector': 'app-home'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

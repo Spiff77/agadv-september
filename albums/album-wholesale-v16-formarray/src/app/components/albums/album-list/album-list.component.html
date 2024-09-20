@@ -1,0 +1,23 @@
+  <mat-card *ngFor="let album of albums; let i=index">
+    <mat-card-header (click)="openDetailModal(album)">
+      <mat-card-title>{{album.name}}</mat-card-title>
+      <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="'https://picsum.photos/id/'+ ( 50 + i)+'/200/130'" alt="Random picture so far">
+    <mat-card-content>
+      {{album.description | slice:0:140}} ...
+      <mat-chip-set aria-label="tags">
+        <mat-chip *ngFor="let tag of album.tags" [disableRipple]="true">{{tag}}</mat-chip>
+      </mat-chip-set>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="addToCart(album)">Add to cart<span *ngIf="getQuantityInCart(album) as quantity">({{quantity}})</span></button>
+      <div class="price">£{{album.price}}</div>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="add-album">
+    <mat-card-header>
+      <mat-card-title (click)="addAlbum()">Click to make another album available</mat-card-title>
+    </mat-card-header>
+  </mat-card>

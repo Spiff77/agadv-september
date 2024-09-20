@@ -5,8 +5,12 @@
     <p>Description: {{data.album.description}}</p>
     <p>Price: {{data.album.price}}</p>
     <!-- load comment link -->
-    <a class="primary" (click)="showComments = true"  *ngIf="!showComments"> Charger les commentaires</a>
-    <app-comments [albumId]="data.album.id" *ngIf="showComments"></app-comments>
+    @if (!showComments) {
+      <a class="primary" (click)="showComments = true" > Charger les commentaires</a>
+    }
+    @if (showComments) {
+      <app-comments [albumId]="data.album.id"></app-comments>
+    }
 
   </mat-dialog-content>
   <mat-dialog-actions>

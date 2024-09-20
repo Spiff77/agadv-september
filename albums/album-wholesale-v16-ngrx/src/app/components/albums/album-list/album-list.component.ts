@@ -9,6 +9,7 @@ import {async, map, Observable} from 'rxjs';
 import {CartState} from '../../../store/cart/cart.reducer';
 import {selectProductById} from '../../../store/cart/cart.selectors';
 import {loadAlbumsStart} from '../../../store/album/album.actions';
+import {toSignal} from '@angular/core/rxjs-interop';
 
 
 @Component({
@@ -20,13 +21,12 @@ export class AlbumListComponent implements OnInit {
 
   private store = inject(Store<{ cartstore: CartState, albumstore: Album[] }>);
   private dialogService = inject(MatDialog);
-  albums$!: Observable<Album[]>;
+  albums = toSignal(this.store.select('albumstore'))
   dialogRef!:MatDialogRef<AddComponent>
 
 
   ngOnInit() {
     this.store.dispatch(loadAlbumsStart());
-    this.albums$ = this.store.select('albumstore')
   }
 
   addToCart(album: Album) {

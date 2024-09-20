@@ -1,12 +1,12 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {Album} from '../../../model/album.model';
-import {concatMap, finalize, interval, map, mergeMap, of, Subject, switchAll, switchMap, takeWhile, tap} from 'rxjs';
+import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
+import {interval, map, mergeMap, Subject, takeWhile} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {AlbumCart, CartState} from '../../../store/cart/cart.reducer';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
@@ -20,20 +20,20 @@ export class CartComponent implements OnInit {
   process$ = interval(400).pipe(
     takeWhile(v => (v*10) <= 100 ),
   );
-  processProgression = 0;
-  processId = 0
+  processProgression = signal(0);
+  processId = signal(0)
 
   ngOnInit() {
     this.startProcess$.pipe(
       mergeMap(id => {
         return this.process$.pipe(map(v => {
-          this.processProgression =  v == 0 ? 1 : (v*10);
+          this.processProgression.set(v == 0 ? 1 : (v*10));
           return {id, progression: v*10}
         }),
         )}),
     ).subscribe(v => {
-      this.processId = v.id
-      this.processProgression = v.progression
+      this.processId.set(v.id)
+      this.processProgression.set(v.progression)
     })
 
     this.cartStore.select("cartstore").subscribe(cartstore => {

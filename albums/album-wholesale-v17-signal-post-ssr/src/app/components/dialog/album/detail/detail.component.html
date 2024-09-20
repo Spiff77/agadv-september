@@ -1,0 +1,24 @@
+<mat-dialog-content>
+  <h1 mat-dialog-title>{{data.album.name}}</h1>
+  <mat-dialog-content>
+    <p>Artist: {{data.album.artist}}</p>
+    <p>Description: {{data.album.description}}</p>
+    <p>Price: {{data.album.price}}</p>
+    <!-- load comment link -->
+    @if (!showComments) {
+      <a class="primary" (click)="showComments = true" > Charger les commentaires</a>
+    }
+    @defer(when showComments) {
+      <app-comments [albumId]="data.album.id"></app-comments>
+    } @loading(minimum 3s) {
+      <div>Loading...please wait</div>
+    }
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">Close</button>
+  </mat-dialog-actions>
+</mat-dialog-content>
+
+
+

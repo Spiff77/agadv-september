@@ -1,0 +1,36 @@
+:host{
+  display: flex;
+  margin: 20px 0 20px 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  row-gap: 20px;
+  column-gap: 20px;
+  .mat-drawer-container{
+    height:85vh;
+  }
+  .mdc-card{
+    max-width: 380px !important;
+  }
+  .header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .mat-mdc-card-actions{
+    display: flex;
+    justify-content: space-between;
+  }
+  .price{
+    color: #0035c5;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .mat-mdc-card-image{
+    padding:20px 0;
+  }
+  .add-album{
+    cursor: pointer;
+    color:blue;
+    text-decoration: underline;
+  }
+}

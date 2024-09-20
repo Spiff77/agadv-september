@@ -1,0 +1,18 @@
+import {ApplicationConfig, isDevMode} from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { APP_ROUTES } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideHttpClient} from '@angular/common/http';
+import {provideToastr} from 'ngx-toastr';
+import {provideAnimations} from '@angular/platform-browser/animations';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(APP_ROUTES),
+    provideAnimationsAsync(),
+    provideHttpClient(),
+    provideAnimations(), // required animations providers
+    provideToastr(),
+]
+};

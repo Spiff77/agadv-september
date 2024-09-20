@@ -1,0 +1,31 @@
+@for (album of albums(); track album; let i=$index){
+  <mat-card>
+    <mat-card-header (click)="openDetailModal(album)">
+      <mat-card-title>{{album.name}}</mat-card-title>
+      <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="'https://picsum.photos/id/'+ ( 50 + i)+'/200/130'" alt="Random picture so far">
+    <mat-card-content>
+      {{album.description | slice:0:140}} ...
+      <mat-chip-set aria-label="tags">
+        @for (tag of album.tags; track tag) {
+          <mat-chip [disableRipple]="true">{{tag}}</mat-chip>
+        }
+      </mat-chip-set>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="addToCart(album)" [attr.data-album-id]="album.id">Add to cart
+        @if (getQuantityInCart(album) | async; as quantity) {
+          <span>({{quantity}}) </span>
+        }
+      </button>
+      <div class="price">£{{album.price}}</div>
+    </mat-card-actions>
+  </mat-card>
+}
+
+<mat-card class="add-album">
+  <mat-card-header>
+    <mat-card-title (click)="addAlbum()">Click to make another album available</mat-card-title>
+  </mat-card-header>
+</mat-card>

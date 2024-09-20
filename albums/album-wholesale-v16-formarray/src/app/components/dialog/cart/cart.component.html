@@ -1,0 +1,42 @@
+<mat-dialog-content>
+<h2>Your cart</h2>
+    <table mat-table [dataSource]="cart">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> ALbum Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="artist">
+        <th mat-header-cell *matHeaderCellDef> Artist </th>
+        <td mat-cell *matCellDef="let element"> {{element.artist}} </td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> Quantity</th>
+        <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+      </ng-container>
+      <ng-container matColumnDef="totalprice">
+        <th mat-header-cell *matHeaderCellDef> Total Line</th>
+        <td mat-cell *matCellDef="let element"> {{(element.price * element.quantity) | number}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div *ngIf="processId !== 0">
+      <div class="process">
+        <span>Process id: <span class="proc-id">{{processId}}</span></span>
+        <span class="progression">{{processProgression >= 100 ? 'DONE!' : processProgression+'%'}} </span>
+      </div>
+      <mat-progress-bar mode="determinate" [value]="processProgression"></mat-progress-bar>
+    </div>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button color="primary" (click)="process()" [disabled]="cart.length === 0">Confirm</button>
+  </mat-dialog-actions>
+  </mat-dialog-content>

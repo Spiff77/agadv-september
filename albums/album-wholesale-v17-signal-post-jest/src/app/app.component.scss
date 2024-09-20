@@ -1,0 +1,48 @@
+.spacer {
+  flex: 1 1 auto;
+}
+h3{
+  height: 50px;
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+}
+.mat-drawer {
+  padding:0 20px;
+}
+ul{
+  list-style-type: circle;
+  padding: 0;
+}
+li{
+
+  display: flex;
+  font-size: 1.2em;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.actions .mat-icon{
+  &:hover{
+    cursor: pointer;
+  }
+  color:grey;
+}
+.rerender{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: yellow;
+  font-size: 2em;
+}
+div{
+  cursor: pointer;
+  padding-right:10px;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.loggedin{
+  color: green;
+}

@@ -1,4 +1,5 @@
-  <mat-card *ngFor="let album of albums$ | async; let i=index">
+@for (album of albums() ; track album; let i = $index) {
+  <mat-card>
     <mat-card-header (click)="openDetailModal(album)">
       <mat-card-title>{{album.name}}</mat-card-title>
       <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>
@@ -7,17 +8,22 @@
     <mat-card-content>
       {{album.description | slice:0:140}} ...
       <mat-chip-set aria-label="tags">
-        <mat-chip *ngFor="let tag of album.tags" [disableRipple]="true">{{tag}}</mat-chip>
+        @for (tag of album.tags; track tag) {
+          <mat-chip [disableRipple]="true">{{tag}}</mat-chip>
+        }
       </mat-chip-set>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button color="primary" (click)="addToCart(album)">Add to cart<span *ngIf="getQuantityInCart(album) | async as quantity">({{quantity}})</span></button>
+      <button mat-flat-button color="primary" (click)="addToCart(album)">Add to cart@if (getQuantityInCart(album) | async; as quantity) {
+        <span>({{quantity}})</span>
+      }</button>
       <div class="price">£{{album.price}}</div>
     </mat-card-actions>
   </mat-card>
+}
 
-  <mat-card class="add-album">
-    <mat-card-header>
-      <mat-card-title (click)="addAlbum()">Click to make another album available</mat-card-title>
-    </mat-card-header>
-  </mat-card>
+<mat-card class="add-album">
+  <mat-card-header>
+    <mat-card-title (click)="addAlbum()">Click to make another album available</mat-card-title>
+  </mat-card-header>
+</mat-card>
